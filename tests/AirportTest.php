@@ -12,8 +12,9 @@
 
     public function testCanLandAPlane() {
       $airport = new Airport(3);
-      $plane = $this->createMock(Plane::class);
-      $iarport->land($plane);
+      // $plane = $this->createMock(Plane::class);
+      $plane = new stdClass;
+      $airport->land($plane);
       $this->assertEquals($airport->isPlaneInHangar(), true);
     }
   }

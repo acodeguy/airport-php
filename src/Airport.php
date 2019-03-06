@@ -16,6 +16,11 @@
       array_push($this->hangar, $plane);
     }
 
+    public function takeOff($plane) {
+      $planeIndex = array_search($plane, $this->hangar);
+      array_splice($this->hangar, $planeIndex, 1);
+    }
+
     public function isPlaneInHangar($plane) {
       return in_array($plane, $this->hangar);
     }

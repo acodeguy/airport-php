@@ -15,7 +15,7 @@
       // $plane = $this->createMock(Plane::class);
       $plane = new stdClass;
       $airport->land($plane);
-      $this->assertEquals($airport->isPlaneInHangar(), true);
+      $this->assertEquals($airport->isPlaneInHangar($plane), true);
     }
   }
 ?>

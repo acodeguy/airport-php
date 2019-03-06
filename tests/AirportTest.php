@@ -17,5 +17,13 @@
       $airport->land($plane);
       $this->assertEquals($airport->isPlaneInHangar($plane), true);
     }
+
+    public function testCanLetAPlaneTakeOff() {
+      $airport = new Airport(1);
+      $plane = new stdClass;
+      $airport->land($plane);
+      $airport->takeOff($plane);
+      $this->assertEquals($airport->isPlaneInHangar($plane), false);
+    }
   }
 ?>

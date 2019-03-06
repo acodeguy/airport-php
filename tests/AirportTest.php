@@ -9,5 +9,12 @@
       $maxCapacity = $airport->hangarCapacity();
       $this->assertEquals($maxCapacity, 5);
     }
+
+    public function testCanLandAPlane() {
+      $airport = new Airport(3);
+      $plane = $this->createMock(Plane::class);
+      $iarport->land($plane);
+      $this->assertEquals($airport->isPlaneInHangar(), true);
+    }
   }
 ?>

@@ -13,9 +13,8 @@
     public function testCanLandAPlane() {
       $airport = new Airport(3);
       $plane = $this->getMockBuilder(Plane::class);
-      $plane = $this->getMockBuilder(Plane::class);
       $airport->land($plane);
-      $this->assertEquals($airport->isPlaneInHangar($plane), true);
+      $this->assertTrue($airport->isPlaneInHangar($plane));
     }
 
     public function testCanLetAPlaneTakeOff() {
@@ -23,7 +22,17 @@
       $plane = $this->getMockBuilder(Plane::class);
       $airport->land($plane);
       $airport->takeOff($plane);
-      $this->assertEquals($airport->isPlaneInHangar($plane), false);
+      $this->assertFalse($airport->isPlaneInHangar($plane));
     }
+
+    // public function testPlanesCannotLandIfHangarFull() {
+    //   $airport = new Airport(1);
+    //   $plane = $this->getMockBuilder(Plane::class);
+    //   $secondPlane = $this->getMockBuilder(Plane::class);
+    //   $airport->land($plane);
+    //   $this->assertTrue($airport->isPlaneInHangar($plane));
+    //   $airport->land($secondPlane);
+    //   $this->assertFalse($airport->isPlaneInHangar($secondPlane));
+    // }
   }
 ?>

@@ -2,7 +2,7 @@
 
   class Airport {
 
-    private $maxHangarCapacity = 15, $hangar = Array();
+    private $maxHangarCapacity = 0, $hangar = Array();
 
     function __construct($maxHangarCapacity) {
       $this->maxHangarCapacity = $maxHangarCapacity;
@@ -13,7 +13,7 @@
     }
 
     public function land($plane) {
-      array_push($this->hangar, $plane);
+      (count($hangar) < $this->maxHangarCapacity) ? array_push($this->hangar, $plane) : false;
     }
 
     public function takeOff($plane) {
